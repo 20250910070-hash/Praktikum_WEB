@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 2</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 0 16px; line-height: 1.6; }
+         h2 { border-bottom: 2px solid #ccc; padding-bottom: 4px; }
+        pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
+        .screenshot { border: 2px dashed #999; padding: 20px; text-align: center; color: #f1ecec; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>
+        <center> MODUL 2 </center> </h1>
+    <p>Cindy Komalasari</p>
+    <p>20250910070</p>
+
+    <h2> 
+        <center > PRE-TEST </center></h2>
+
+    <h3>1.  Apa tujuan dari menggunakan version control dalam pengembangan perangkat
+lunak?</h3>
+    <p>
+        Tujuan utama menggunakan Version Control (Kontrol Versi) dalam pengembangan perangkat lunak adalah
+         untuk mengelola dan melacak setiap perubahan pada kode program agar proses pengembangan lebih terstruktur, aman, dan mudah dikelola.
+    </p>
+
+    <h3>2. Jelaskan perbedaan antara git add dan git commit!</h3>
+    <p>
+        Perbedaan sebagai berikut: 
+    </p>
+    <ol>
+        <li>Git add : git add digunakan untuk memasukkan perubahan file ke dalam staging area (area persiapan) sebelum disimpan sebagai riwayat perubahan.</li>
+        <li>Git coomit: git commit digunakan untuk menyimpan perubahan yang sudah berada di staging area ke dalam riwayat versi Git secara permanen.</li>
+       
+    </ol>
+
+    <h3>3. Bagaimana cara membuat branch baru di Git?</h3>
+    <ol>
+        <li> Periksa branch yang tersedia.</li>
+        <li>Buat branch baru.</li>
+        <li> Pindah ke branch baru.</li>
+        <li> Periksa branch aktif.</li>
+    </ol>
+
+     <h2> 
+        <center> POST TEST </center></h2>
+
+     <h3>1.  Apa fungsi dari git merge dalam workflow Git?</h3>
+    <p>
+        Git Merge adalah salah satu perintah dalam Git yang berfungsi untuk menggabungkan perubahan kode dari satu branch ke branch lainnya.
+         Perintah ini sangat penting dalam workflow Git, terutama ketika beberapa pengembang bekerja secara bersamaan dalam satu proyek perangkat lunak.
+         Dalam pengembangan perangkat lunak, biasanya setiap fitur baru atau perbaikan bug dikerjakan pada branch yang berbeda agar tidak mengganggu kode utama (main branch). Setelah pekerjaan selesai dan sudah diperiksa, perubahan tersebut dapat digabungkan ke branch utama menggunakan perintah git merge.
+    
+    </p>
+    <h3>2. Jelaskan cara mengatasi konflik saat melakukan merge!</h3>
+    <p>
+        Merge conflict adalah kondisi ketika Git mengalami kesulitan menggabungkan perubahan dari dua branch karena terdapat perubahan pada bagian file atau baris kode yang sama. Konflik ini biasanya terjadi ketika dua pengembang mengubah bagian kode yang sama dengan isi yang berbeda.
+        Untuk mengatasi konflik saat melakukan merge, pengembang perlu memeriksa bagian kode yang mengalami konflik, menentukan perubahan yang akan digunakan, kemudian menyelesaikan proses merge.
+    </p>
+    <p>
+       Berikut langkah-langkah untuk mengatasi merge conflict dalam Git: 
+    </p>
+    <ol>
+        <li>Periksa status repository </li>
+        <li>Buka file yang mengalami konflik </li>
+        <li>Tentukan perubahan yang akan digunakan </li>
+        <li>Tambahkan file yang sudah diperbaiki </li>
+         <li>Selesaikan proses merge </li>
+         <li> Periksa hasil merge </li>
+    </ol>
+
+    <h3>3.Tulis langkah-langkah untuk menambahkan file baru ke repository Git dan melakukan commit?</h3>
+    <ol>
+        <li> Cek status repository.</li>
+        <li> Buat atau salin file baru ke folder repository.</li>
+        <li> Tambahkan file ke staging area.</li>
+        <li> Cek lagi apakah file sudah masuk staging.</li>
+         <li> Lakukan commit dengan pesan yang jelas .</li>
+          <li> kirim ke remote.</li>
+    </ol>
+    
+
+    <h2>
+        <center > LATIHAN /TUGAS </center></h2>
+
+    <h3>1. Repository Git untuk proyek web (pembuatan, commit, dan push ke GitHub)</h3>
+    <p>
+        Proyek: Profil Keluarga.<br>
+        Repository: <a href="git@github.com:20250910070-hash/profilekeluarga.git">git@github.com:20250910070-hash/profilekeluarga.git</a><br>
+        Situs (GitHub Pages): <a href="https://20250910070-hash.github.io/profilekeluarga/profilekeluarga">https://20250910070-hash.github.io/profilekeluarga/profilekeluarga</a>
+    </p>
+    <p>Perintah yang dijalankan:</p>
+<pre>git init
+git add profilekeluargacss.html
+git commit -m "Initial commit"
+git remote add origin https://github.com/20250910070-hash/profilekeluarga.git
+git branch -M main
+git push -u origin main</pre>
+    <div class="screenshot"><img src="Screenshot 2026-10-31 160527.png" width="700"></div>
+    <h3>2. Workflow Git dengan branch fitur baru dan integrasi ke branch utama</h3>
+    <p>Alur: <code>main</code> (stabil) &rarr; buat branch fitur &rarr; commit di branch fitur &rarr; merge ke <code>main</code> &rarr; push &rarr; hapus branch fitur.</p>
+<pre>git checkout -b fitur-readme
+echo "# profilekeluarga" &gt; README.md
+git add README.md
+git commit -m "Add README"
+git checkout main
+git merge fitur-readme
+git push origin main
+git branch -d fitur-readme
+git log --oneline --graph</pre>
+    <div class="screenshot"><img src="Screenshot 2026-10-31 172830.png" width="600"></div>
+     <div class="screenshot"><img src="Screenshot 2026-10-31 173033.png" width="600"></div>
+
+    <h3>3. Seluruh praktikum modul sebelumnya disimpan di repository Git</h3>
+    <p>
+        Repository: <a href="https://github.com/20250910070-hash/pweb_1.git">https://github.com/20250910070-hash/pweb_1.git</a><br>
+        Isi: Latihan 01 sampai 05, Post Test 01, dan Tugas Biodata.
+    </p>
+    <div class="screenshot"><img src="Screenshot 2026-10-31 173715.png" width="700"></div>
+</body>
+</html>
